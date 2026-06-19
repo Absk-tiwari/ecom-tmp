@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Dash and Dot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <nav class="mobile-menu-drawer" id="mobileMenuDrawer">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <img src="./images/logo.png">
+            </div>
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        </div>
+        <div class="mobile-menu-search">
+            <input type="text" placeholder="Search for products...">
+        </div>
+        <ul class="mobile-menu-nav">
+            <li class="mobile-nav-item"><a href="products.html">New In! <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Top Wear <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Sets <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Sarees <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Blouses <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Dress Materials <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Bottom Wear <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Sale <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Collections <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Online Exclusive <i class="fas fa-chevron-right"></i></a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <div class="gender-btns">
+                <button class="gender-btn active">WOMAN</button>
+                <button class="gender-btn">MAN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Filter Drawer -->
+    <div class="filter-drawer" id="filterDrawer">
+        <div class="filter-drawer-header">
+            <h3>FILTERS</h3>
+            <button class="filter-drawer-close" id="filterDrawerClose">&times;</button>
+        </div>
+        <div class="filter-drawer-content">
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h3>PRICE</h3>
+                    <button class="toggle-btn">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="filter-content">
+                    <div class="price-range">
+                        <div class="price-inputs">
+                            <span>&#8377;</span>
+                            <input type="number" value="0" min="0">
+                            <span>TO</span>
+                            <span>&#8377;</span>
+                            <input type="number" value="5499" max="5499">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h3>SIZE</h3>
+                </div>
+                <div class="filter-content">
+                    <label class="filter-option"><input type="checkbox"> XS (640)</label>
+                    <label class="filter-option"><input type="checkbox"> S (640)</label>
+                    <label class="filter-option"><input type="checkbox"> M (640)</label>
+                    <label class="filter-option"><input type="checkbox"> L (671)</label>
+                    <label class="filter-option"><input type="checkbox"> XL (668)</label>
+                    <label class="filter-option"><input type="checkbox"> XXL (3)</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h3>FABRIC</h3>
+                </div>
+                <div class="filter-content">
+                    <label class="filter-option"><input type="checkbox"> COTTON (182)</label>
+                    <label class="filter-option"><input type="checkbox"> LINEN (13)</label>
+                    <label class="filter-option"><input type="checkbox"> POLYESTER (356)</label>
+                    <label class="filter-option"><input type="checkbox"> RAYON (7)</label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-drawer-footer">
+            <button class="filter-clear-btn">CLEAR ALL</button>
+            <button class="filter-apply-btn">APPLY</button>
+        </div>
+    </div>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <p>Enjoy extra 10% off on your first purchase. Use Code <span class="promo-code">NEW10</span></p>
+        <button class="promo-close">&times;</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="header-left">
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <button class="menu-btn">MENU</button>
+                <button class="gender-btn active">WOMAN</button>
+                <button class="gender-btn">MAN</button>
+            </div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo.png"/>
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" placeholder="SEARCH">
+                </div>
+                <button class="icon-btn user-btn">
+                    <i class="far fa-user"></i>
+                </button>
+                <button class="icon-btn cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+                <div class="currency-select">
+                    <span>INR</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#">New In! <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Top Wear <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Sets <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Sarees <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Blouses <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Dress Materials <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Bottom wear & More <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Sale <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Collections <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Online Exclusive <i class="fas fa-chevron-down"></i></a>
+                </li>
+            </ul>
+            <div class="nav-icons">
+                <button class="nav-icon-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-icon-btn currency-toggle">
+                    <span class="rupee">&#8377;</span>
+                    <span class="toggle-dot"></span>
+                </button>
+                <button class="nav-icon-btn">
+                    <i class="far fa-user"></i>
+                </button>
+                <button class="nav-icon-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                </button>
+                <button class="nav-icon-btn wishlist-btn">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="nav-icon-btn cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>&gt;</span>
+        <a href="#">Shop</a>
+        <span>&gt;</span>
+        <span>All Products</span>
+    </div>
+
+    <!-- Products Page Content -->
+    <main class="products-page">
+        <div class="page-header">
+            <h1>ALL PRODUCTS <span class="product-count">(6226 products)</span></h1>
+            <button class="mobile-filter-btn" id="mobileFilterBtn">
+                <i class="fas fa-sliders-h"></i>
+                FILTER
+            </button>
+            <div class="view-options">
+                <span class="sort-label">SORT BY</span>
+                <button class="view-btn grid-2 active">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <rect x="0" y="0" width="7" height="7"></rect>
+                        <rect x="9" y="0" width="7" height="7"></rect>
+                        <rect x="0" y="9" width="7" height="7"></rect>
+                        <rect x="9" y="9" width="7" height="7"></rect>
+                    </svg>
+                </button>
+                <button class="view-btn grid-4">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <rect x="0" y="0" width="3" height="3"></rect>
+                        <rect x="4.5" y="0" width="3" height="3"></rect>
+                        <rect x="9" y="0" width="3" height="3"></rect>
+                        <rect x="13" y="0" width="3" height="3"></rect>
+                        <rect x="0" y="4.5" width="3" height="3"></rect>
+                        <rect x="4.5" y="4.5" width="3" height="3"></rect>
+                        <rect x="9" y="4.5" width="3" height="3"></rect>
+                        <rect x="13" y="4.5" width="3" height="3"></rect>
+                    </svg>
+                </button>
+                <button class="view-btn list">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <rect x="0" y="0" width="16" height="3"></rect>
+                        <rect x="0" y="5" width="16" height="3"></rect>
+                        <rect x="0" y="10" width="16" height="3"></rect>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="products-container">
+            <!-- Sidebar Filters -->
+            <aside class="filters-sidebar">
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <h3>PRICE</h3>
+                        <button class="toggle-btn">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="18 15 12 9 6 15"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="filter-content">
+                        <div class="price-range">
+                            <div class="range-slider">
+                                <div class="range-track"></div>
+                                <div class="range-fill"></div>
+                                <input type="range" min="0" max="5499" value="0" class="range-min">
+                                <input type="range" min="0" max="5499" value="5499" class="range-max">
+                            </div>
+                            <div class="price-inputs">
+                                <span>&#8377;INR</span>
+                                <input type="number" value="0" min="0">
+                                <span>TO</span>
+                                <span>&#8377;INR</span>
+                                <input type="number" value="5499" max="5499">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <h3>SIZE</h3>
+                        <button class="toggle-btn">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="18 15 12 9 6 15"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="filter-content">
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            XS (640)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            S (640)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            M (640)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            L (671)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            XL (668)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            XXL (3)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            2XL (69)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            3XL (31)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            4XL (10)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            5XL (1)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <h3>FABRIC</h3>
+                        <button class="toggle-btn">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="18 15 12 9 6 15"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="filter-content">
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            COTTON (182)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            LINEN (13)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            MODAL (1)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            NYLON (1)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            ORGANIC COTTON (1)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            POLYESTER (356)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            POLYESTER-POLYURETHANE COATED (1)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            RAYON (7)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            TENCEL (5)
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Products Grid -->
+            <div class="products-listing">
+                <div class="sort-dropdown">
+                    <button class="sort-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="4" y1="21" x2="4" y2="14"></line>
+                            <line x1="4" y1="10" x2="4" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12" y2="3"></line>
+                            <line x1="20" y1="21" x2="20" y2="16"></line>
+                            <line x1="20" y1="12" x2="20" y2="3"></line>
+                        </svg>
+                        SORT BY
+                    </button>
+                    <div class="sort-options">
+                        <button class="sort-option active">Featured</button>
+                        <button class="sort-option">Best selling</button>
+                        <button class="sort-option">Price, low to high</button>
+                        <button class="sort-option">Price, high to low</button>
+                        <button class="sort-option">New Arrival</button>
+                    </div>
+                </div>
+
+                <div class="products-grid listing swiper listing-swiper">
+                    <div class="swiper-wrapper">
+                        <a href="product-detail.html" class="product-card listing-card swiper-slide">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&h=400&fit=crop" alt="Dark Green Lace Cotton Shirt">
+                                <button class="wishlist-btn" onclick="event.preventDefault();">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" onclick="event.preventDefault();">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">DARK GREEN LACE COTTON SHIRT</h3>
+                                <span class="product-price-single">&#8377;3,999</span>
+                            </div>
+                        </a>
+
+                        <a href="product-detail.html" class="product-card listing-card swiper-slide">
+                            <div class="product-image">
+                                <span class="badge-label">BESTSELLER</span>
+                                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&h=400&fit=crop" alt="Floral Print Full Sleeves Shirt">
+                                <button class="wishlist-btn" onclick="event.preventDefault();">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" onclick="event.preventDefault();">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">FLORAL PRINT FULL SLEEVES SHIRT</h3>
+                                <span class="product-price-single">&#8377;3,499</span>
+                            </div>
+                        </a>
+
+                        <a href="product-detail.html" class="product-card listing-card swiper-slide">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=400&fit=crop" alt="V-Neck Contrast Stitch Midi Dress">
+                                <button class="wishlist-btn" onclick="event.preventDefault();">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" onclick="event.preventDefault();">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">V-NECK CONTRAST STITCH MIDI DRESS</h3>
+                                <span class="product-price-single">&#8377;4,999</span>
+                            </div>
+                        </a>
+
+                        <a href="product-detail.html" class="product-card listing-card swiper-slide">
+                            <div class="product-image">
+                                <span class="badge-label">BESTSELLER</span>
+                                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=300&h=400&fit=crop" alt="Navy High Rise Culottes">
+                                <button class="wishlist-btn" onclick="event.preventDefault();">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" onclick="event.preventDefault();">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">NAVY HIGH RISE CULOTTES</h3>
+                                <span class="product-price-single">&#8377;3,999</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-pagination listing-pagination"></div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <span class="page-num active">1</span>
+                    <span class="page-num">2</span>
+                    <span class="page-num">3</span>
+                    <span class="page-dots">...</span>
+                    <span class="page-num">130</span>
+                    <button class="page-next">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shop by Categories -->
+    <section class="shop-categories">
+        <h3>SHOP BY CATEGORIES</h3>
+        <div class="category-links">
+            <a href="#">Dresses</a> |
+            <a href="#">Jumpsuits</a> |
+            <a href="#">Jeans</a> |
+            <a href="#">Tops</a> |
+            <a href="#">T-Shirts</a> |
+            <a href="#">Shirts</a> |
+            <a href="#">Co-Ords</a> |
+            <a href="#">Jackets</a> |
+            <a href="#">Accessories</a> |
+            <a href="#">Bottomwear</a> |
+            <a href="#">Outerwear</a> |
+            <a href="#">Athleisure</a> |
+            <a href="#">Lingerie</a> |
+            <a href="#">Office Wear</a> |
+            <a href="#">Party Dresses</a> |
+            <a href="#">Casual Dresses</a> |
+            <a href="#">Party Wear</a> |
+            <a href="#">Formal Dresses</a> |
+            <a href="#">Crop Tops</a> |
+            <a href="#">Tank Tops</a> |
+            <a href="#">Floral Tops & T-Shirts</a> |
+            <a href="#">Party Tops & T-shirts</a> |
+            <a href="#">Printed Tops</a> |
+            <a href="#">Striped Tops</a> |
+            <a href="#">Sleeveless Tops & T-shirts</a> |
+            <a href="#">Formal Tops & T-Shirts</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-bottom-nav-items">
+            <a href="index.html" class="mobile-bottom-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="products.html" class="mobile-bottom-nav-item active">
+                <i class="fas fa-th-large"></i>
+                <span>Shop</span>
+            </a>
+            <a href="#" class="mobile-bottom-nav-item">
+                <i class="far fa-heart"></i>
+                <span>Wishlist</span>
+            </a>
+            <a href="#" class="mobile-bottom-nav-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Bag</span>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="#" class="mobile-bottom-nav-item">
+                <i class="far fa-user"></i>
+                <span>Account</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper only on mobile for products listing
+        function initListingSwiper() {
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                // Initialize Listing Swiper
+                if (!window.listingSwiper || window.listingSwiper.destroyed) {
+                    window.listingSwiper = new Swiper('.listing-swiper', {
+                        slidesPerView: 1.2,
+                        spaceBetween: 12,
+                        centeredSlides: false,
+                        pagination: {
+                            el: '.listing-pagination',
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            400: {
+                                slidesPerView: 1.5,
+                                spaceBetween: 12,
+                            },
+                            500: {
+                                slidesPerView: 2,
+                                spaceBetween: 15,
+                            }
+                        }
+                    });
+                }
+            } else {
+                // Destroy swiper on desktop
+                if (window.listingSwiper && !window.listingSwiper.destroyed) {
+                    window.listingSwiper.destroy(true, true);
+                    window.listingSwiper = null;
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initListingSwiper);
+
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(initListingSwiper, 250);
+        });
+    </script>
+</body>
+</html>

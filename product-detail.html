@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Dash and Dot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <nav class="mobile-menu-drawer" id="mobileMenuDrawer">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <img src="./images/logo.png"/>
+            </div>
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        </div>
+        <div class="mobile-menu-search">
+            <input type="text" placeholder="Search for products...">
+        </div>
+        <ul class="mobile-menu-nav">
+            <li class="mobile-nav-item"><a href="products.html">New In! <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Top Wear <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Sets <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Sarees <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Blouses <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Dress Materials <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Bottom Wear <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Sale <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Collections <i class="fas fa-chevron-right"></i></a></li>
+            <li class="mobile-nav-item"><a href="products.html">Online Exclusive <i class="fas fa-chevron-right"></i></a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <div class="gender-btns">
+                <button class="gender-btn active">WOMAN</button>
+                <button class="gender-btn">MAN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <p>Enjoy extra 10% off on your first purchase. Use Code <span class="promo-code">NEW10</span></p>
+        <button class="promo-close">&times;</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="header-left">
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <button class="menu-btn">MENU</button>
+                <button class="gender-btn active">WOMAN</button>
+                <button class="gender-btn">MAN</button>
+            </div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo.png"/>
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" placeholder="SEARCH">
+                </div>
+                <button class="icon-btn user-btn">
+                    <i class="far fa-user"></i>
+                </button>
+                <button class="icon-btn cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+                <div class="currency-select">
+                    <span>INR</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#">New In! <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Top Wear <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Sets <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Sarees <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Blouses <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Dress Materials <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Bottom wear & More <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Sale <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Collections <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Online Exclusive <i class="fas fa-chevron-down"></i></a>
+                </li>
+            </ul>
+            <div class="nav-icons">
+                <button class="nav-icon-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-icon-btn currency-toggle">
+                    <span class="rupee">&#8377;</span>
+                    <span class="toggle-dot"></span>
+                </button>
+                <button class="nav-icon-btn">
+                    <i class="far fa-user"></i>
+                </button>
+                <button class="nav-icon-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                </button>
+                <button class="nav-icon-btn wishlist-btn">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="nav-icon-btn cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>&gt;</span>
+        <a href="products.html">Shop</a>
+        <span>&gt;</span>
+        <span>Emerald Green Linen Co-Ord Set</span>
+    </div>
+
+    <!-- Product Detail Page -->
+    <main class="product-detail-page">
+        <div class="product-detail-container">
+            <!-- Image Gallery -->
+            <div class="product-gallery">
+                <div class="thumbnail-list">
+                    <button class="thumbnail active">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=80&h=100&fit=crop" alt="Thumbnail 1">
+                    </button>
+                    <button class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=80&h=100&fit=crop" alt="Thumbnail 2">
+                    </button>
+                    <button class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=80&h=100&fit=crop" alt="Thumbnail 3">
+                    </button>
+                    <button class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=80&h=100&fit=crop" alt="Thumbnail 4">
+                    </button>
+                    <button class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=80&h=100&fit=crop" alt="Thumbnail 5">
+                    </button>
+                </div>
+                <div class="main-image">
+                    <button class="nav-btn prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&h=800&fit=crop" alt="Linen Co-Ord Set">
+                    <button class="nav-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info-detail">
+                <div class="product-brand">DASH & DOT</div>
+                <h1 class="product-title">Emerald Green Linen Co-Ord Set With Embroidery</h1>
+
+                <div class="product-rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="rating-count">4.5 (128 Reviews)</span>
+                </div>
+
+                <div class="product-price-detail">
+                    <span class="current-price">&#8377;12,999</span>
+                    <span class="original-price">&#8377;18,999</span>
+                    <span class="discount-badge">32% OFF</span>
+                </div>
+                <p class="tax-info">Inclusive of all taxes</p>
+
+                <!-- Color Selection -->
+                <div class="color-section">
+                    <span class="section-label">COLOR: <strong>Emerald Green</strong></span>
+                    <div class="color-options">
+                        <button class="color-btn active" style="background-color: #0d5c4f;" title="Emerald Green"></button>
+                        <button class="color-btn" style="background-color: #c4a35a;" title="Golden Rust"></button>
+                        <button class="color-btn" style="background-color: #2c3e50;" title="Navy Blue"></button>
+                        <button class="color-btn" style="background-color: #8e44ad;" title="Purple"></button>
+                    </div>
+                </div>
+
+                <!-- Size Selection -->
+                <div class="size-section">
+                    <div class="size-header">
+                        <span class="section-label">SELECT SIZE</span>
+                        <a href="#" class="size-chart-link"><i class="fas fa-ruler"></i> Size Guide</a>
+                    </div>
+                    <div class="size-options">
+                        <button class="size-btn">XS</button>
+                        <button class="size-btn">S</button>
+                        <button class="size-btn active">M</button>
+                        <button class="size-btn">L</button>
+                        <button class="size-btn">XL</button>
+                        <button class="size-btn disabled" disabled>XXL</button>
+                    </div>
+                </div>
+
+                <!-- Quantity -->
+                <div class="quantity-section">
+                    <span class="section-label">QUANTITY</span>
+                    <div class="quantity-selector">
+                        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1" max="10" class="qty-input">
+                        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn-add-bag">
+                        <i class="fas fa-shopping-bag"></i> ADD TO BAG
+                    </button>
+                    <button class="btn-wishlist-large">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <button class="btn-buy-now">BUY NOW</button>
+
+                <!-- Delivery Info -->
+                <div class="delivery-section">
+                    <h4><i class="fas fa-truck"></i> Delivery Options</h4>
+                    <div class="pincode-check">
+                        <input type="text" placeholder="Enter Pincode" maxlength="6">
+                        <button class="check-btn">Check</button>
+                    </div>
+                    <div class="delivery-features">
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <strong>Free Delivery</strong>
+                                <span>On orders above &#8377;999</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div>
+                                <strong>Cash on Delivery</strong>
+                                <span>Available</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-undo"></i>
+                            <div>
+                                <strong>Easy Returns</strong>
+                                <span>7 Days Return Policy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offers -->
+                <div class="offers-section">
+                    <h4><i class="fas fa-tags"></i> Available Offers</h4>
+                    <ul class="offers-list">
+                        <li><i class="fas fa-percent"></i> Get 10% off on your first order using code <strong>NEW10</strong></li>
+                        <li><i class="fas fa-percent"></i> Extra 5% off on UPI payments</li>
+                        <li><i class="fas fa-credit-card"></i> Bank Offer: 15% off on HDFC Credit Cards</li>
+                        <li><i class="fas fa-gift"></i> Buy 2, Get 10% Off on selected items</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Details Tabs -->
+        <div class="product-details-section">
+            <div class="product-tabs">
+                <button class="tab-btn active" data-tab="description">Description</button>
+                <button class="tab-btn" data-tab="details">Product Details</button>
+                <button class="tab-btn" data-tab="care">Care Instructions</button>
+                <button class="tab-btn" data-tab="reviews">Reviews (128)</button>
+            </div>
+
+            <div class="tab-content active" id="description">
+                <p>Elevate your ethnic wardrobe with this stunning emerald green linen co-ord set. Featuring intricate embroidery work and a comfortable A-line silhouette, this outfit is perfect for festive occasions and casual gatherings alike.</p>
+                <p>The breathable linen fabric ensures all-day comfort while the elegant design keeps you looking effortlessly chic. This co-ord set includes a beautifully embroidered kurta with 3/4th sleeves and a matching palazzo.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Premium quality linen fabric</li>
+                    <li><i class="fas fa-check"></i> Intricate hand embroidery</li>
+                    <li><i class="fas fa-check"></i> Comfortable A-line fit</li>
+                    <li><i class="fas fa-check"></i> Perfect for festive occasions</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="details">
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Style Code</span>
+                        <span class="detail-value">FWS6KS11159A</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Pattern</span>
+                        <span class="detail-value">Embroidered</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Occasion</span>
+                        <span class="detail-value">Festive, Casual</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Fabric</span>
+                        <span class="detail-value">100% Linen</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Fit</span>
+                        <span class="detail-value">A-Line</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Neck Type</span>
+                        <span class="detail-value">V-Neck</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Sleeve</span>
+                        <span class="detail-value">3/4th Sleeves</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Bottom Type</span>
+                        <span class="detail-value">Palazzo</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Set Contents</span>
+                        <span class="detail-value">Kurta + Palazzo</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Country of Origin</span>
+                        <span class="detail-value">India</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="care">
+                <div class="care-instructions">
+                    <div class="care-item">
+                        <i class="fas fa-tint"></i>
+                        <span>Machine wash cold with like colors</span>
+                    </div>
+                    <div class="care-item">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Do not bleach</span>
+                    </div>
+                    <div class="care-item">
+                        <i class="fas fa-wind"></i>
+                        <span>Tumble dry low</span>
+                    </div>
+                    <div class="care-item">
+                        <i class="fas fa-temperature-low"></i>
+                        <span>Iron on medium heat if needed</span>
+                    </div>
+                    <div class="care-item">
+                        <i class="fas fa-ban"></i>
+                        <span>Do not dry clean</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="reviews">
+                <div class="reviews-summary">
+                    <div class="rating-big">
+                        <span class="rating-number">4.5</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="total-reviews">Based on 128 reviews</span>
+                    </div>
+                    <div class="rating-bars">
+                        <div class="rating-bar-item">
+                            <span>5 <i class="fas fa-star"></i></span>
+                            <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+                            <span>89</span>
+                        </div>
+                        <div class="rating-bar-item">
+                            <span>4 <i class="fas fa-star"></i></span>
+                            <div class="bar"><div class="fill" style="width: 20%;"></div></div>
+                            <span>26</span>
+                        </div>
+                        <div class="rating-bar-item">
+                            <span>3 <i class="fas fa-star"></i></span>
+                            <div class="bar"><div class="fill" style="width: 7%;"></div></div>
+                            <span>9</span>
+                        </div>
+                        <div class="rating-bar-item">
+                            <span>2 <i class="fas fa-star"></i></span>
+                            <div class="bar"><div class="fill" style="width: 2%;"></div></div>
+                            <span>3</span>
+                        </div>
+                        <div class="rating-bar-item">
+                            <span>1 <i class="fas fa-star"></i></span>
+                            <div class="bar"><div class="fill" style="width: 1%;"></div></div>
+                            <span>1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-list">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer">
+                                <span class="reviewer-name">Priya S.</span>
+                                <span class="verified"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">Absolutely love this co-ord set! The fabric quality is amazing and the embroidery is so beautiful. Fits perfectly and received so many compliments at my friend's wedding.</p>
+                        <span class="review-date">2 weeks ago</span>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer">
+                                <span class="reviewer-name">Ananya M.</span>
+                                <span class="verified"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">Great quality and very comfortable to wear all day. The color is exactly as shown in the pictures. Only giving 4 stars because delivery took longer than expected.</p>
+                        <span class="review-date">1 month ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- You May Also Like -->
+        <section class="also-like">
+            <h2 class="section-title">YOU MAY ALSO LIKE</h2>
+            <div class="products-grid swiper also-like-swiper">
+                <div class="swiper-wrapper">
+                    <a href="product-detail.html" class="product-card swiper-slide">
+                        <div class="product-image">
+                            <img src="./images/one-piece-swim.jpg" alt="Ivory Gold Sequin Top">
+                            <button class="wishlist-btn" onclick="event.preventDefault();">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">One Piece Cut Out Ruffles One</h3>
+                            <div class="product-price">
+                                <span class="current-price">&#8377;19,980</span>
+                                <span class="original-price">&#8377;24,999</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product-detail.html" class="product-card swiper-slide">
+                        <div class="product-image">
+                            <img src="./images/bright-orange.jpg" alt="Halter Sequin Peplum">
+                            <button class="wishlist-btn" onclick="event.preventDefault();">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">WHITE & ORANGE COASTAL GRACE BEA</h3>
+                            <div class="product-price">
+                                <span class="current-price">&#8377;14,980</span>
+                                <span class="original-price">&#8377;19,999</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product-detail.html" class="product-card swiper-slide">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?w=300&h=400&fit=crop" alt="Navy Blue Georgette">
+                            <button class="wishlist-btn" onclick="event.preventDefault();">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Navy Blue Georgette Co-Ord</h3>
+                            <div class="product-price">
+                                <span class="current-price">&#8377;11,999</span>
+                                <span class="original-price">&#8377;15,999</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product-detail.html" class="product-card swiper-slide">
+                        <div class="product-image">
+                            <img src="./images/pink.jpg" alt="Pink Silk Set">
+                            <button class="wishlist-btn" onclick="event.preventDefault();">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Pink Silk Embroidered Set</h3>
+                            <div class="product-price">
+                                <span class="current-price">&#8377;16,499</span>
+                                <span class="original-price">&#8377;21,999</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-pagination also-like-pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-bottom-nav-items">
+            <a href="index.html" class="mobile-bottom-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="products.html" class="mobile-bottom-nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Shop</span>
+            </a>
+            <a href="#" class="mobile-bottom-nav-item">
+                <i class="far fa-heart"></i>
+                <span>Wishlist</span>
+            </a>
+            <a href="#" class="mobile-bottom-nav-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Bag</span>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="#" class="mobile-bottom-nav-item">
+                <i class="far fa-user"></i>
+                <span>Account</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper only on mobile for "You May Also Like" section
+        function initAlsoLikeSwiper() {
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                // Initialize Also Like Swiper
+                if (!window.alsoLikeSwiper || window.alsoLikeSwiper.destroyed) {
+                    window.alsoLikeSwiper = new Swiper('.also-like-swiper', {
+                        slidesPerView: 1.2,
+                        spaceBetween: 12,
+                        centeredSlides: false,
+                        pagination: {
+                            el: '.also-like-pagination',
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            400: {
+                                slidesPerView: 1.5,
+                                spaceBetween: 12,
+                            },
+                            500: {
+                                slidesPerView: 2,
+                                spaceBetween: 15,
+                            }
+                        }
+                    });
+                }
+            } else {
+                // Destroy swiper on desktop
+                if (window.alsoLikeSwiper && !window.alsoLikeSwiper.destroyed) {
+                    window.alsoLikeSwiper.destroy(true, true);
+                    window.alsoLikeSwiper = null;
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initAlsoLikeSwiper);
+
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(initAlsoLikeSwiper, 250);
+        });
+    </script>
+</body>
+</html>
