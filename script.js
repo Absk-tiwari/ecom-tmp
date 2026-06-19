@@ -260,27 +260,77 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Color Button Selection
+    // Color Button Selection with Variant Images
     const colorBtns = document.querySelectorAll('.color-btn');
+    const thumbnailList = document.getElementById('thumbnailList');
+    const mainProductImage = document.getElementById('mainProductImage');
+    const selectedColorName = document.getElementById('selectedColorName');
+
     colorBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             colorBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-        });
-    });
 
-    // Thumbnail Selection
-    const thumbnails = document.querySelectorAll('.thumbnail');
-    const mainImage = document.querySelector('.main-image img');
+            const colorName = btn.getAttribute('data-color');
+            const imagesData = btn.getAttribute('data-images');
 
-    thumbnails.forEach(thumb => {
-        thumb.addEventListener('click', () => {
-            thumbnails.forEach(t => t.classList.remove('active'));
-            thumb.classList.add('active');
-            if (mainImage) {
-                const thumbImg = thumb.querySelector('img');
-                mainImage.src = thumbImg.src.replace('w=80&h=100', 'w=600&h=800');
+            if (selectedColorName && colorName) {
+                selectedColorName.textContent = colorName;
+            }
+
+            if (imagesData && thumbnailList && mainProductImage) {
+                const images = JSON.parse(imagesData);
+
+                thumbnailList.innerHTML = images.map((img, index) => `
+                    <button class="thumbnail ${index === 0 ? 'active' : ''}">
+                        <img src="${img}?w=80&h=100&fit=crop" alt="Thumbnail ${index + 1}">
+                    </button>
+                `).join('');
+
+                mainProductImage.src = `${images[0]}?w=600&h=800&fit=crop`;
+
+                initThumbnailClicks();
             }
         });
     });
+
+    function initThumbnailClicks() {
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainProductImage');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                if (mainImage) {
+                    const thumbImg = thumb.querySelector('img');
+                    mainImage.src = thumbImg.src.replace('w=80&h=100', 'w=600&h=800');
+                }
+            });
+        });
+    }
+
+    initThumbnailClicks();
+
+    // Gallery Navigation Buttons
+    const prevBtn = document.querySelector('.main-image .nav-btn.prev');
+    const nextBtn = document.querySelector('.main-image .nav-btn.next');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const activeThumb = document.querySelector('.thumbnail.active');
+            const activeIndex = Array.from(thumbnails).indexOf(activeThumb);
+            const prevIndex = activeIndex > 0 ? activeIndex - 1 : thumbnails.length - 1;
+            thumbnails[prevIndex].click();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const activeThumb = document.querySelector('.thumbnail.active');
+            const activeIndex = Array.from(thumbnails).indexOf(activeThumb);
+            const nextIndex = activeIndex < thumbnails.length - 1 ? activeIndex + 1 : 0;
+            thumbnails[nextIndex].click();
+        });
+    }
 });
